@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Booking - BookPro</title>
+    <link rel="icon" type="image/png" href="fevicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container" style="justify-content: space-between;">
+                <a href="index.html" class="hero-tag">
+                    <i class="fas fa-fingerprint"></i>
+                    <div class="hero-tag-text">
+                        <span>Fingerprint</span>
+                        <strong>Appointment</strong>
+                    </div>
+                </a>
+                <div class="topbar-right">
+                    <span class="service-center-text">Markaz-e-Khidmat Mutakamal</span>
+                    <button class="hero-lines" type="button" onclick="toggleHeroPanel()" aria-label="Open quick actions">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="hero-panel" id="heroPanel">
+                        <a href="index.html">Home</a>
+                        <a href="#services">Services</a>
+                        <a href="booking.html">Book Now</a>
+                        <a href="centers.html">Appointment Offices</a>
+                        <div class="contact-menu">
+                            <a href="#" onclick="showPhonePopup(event)" class="contact-link">Contact <i class="fas fa-chevron-down"></i></a>
+                            <div class="phone-popup" id="phonePopup">
+                                <div class="popup-content">
+                                    <a href="https://wa.me/923338181082" target="_blank" class="phone-link">
+                                        <i class="fab fa-whatsapp"></i> +92 333 8181082
+                                    </a>
+                                    <button class="popup-close" onclick="hidePhonePopup()">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <div class="booking-header primary">
+                    <h1><i class="fas fa-fingerprint"></i> Secure Booking</h1>
+                </div>
+
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-group">
+                        <h3><i class="fas fa-user-shield"></i> Personal Info</h3>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>First Name *</label>
+                                <input type="text" name="first_name" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Last Name *</label>
+                                <input type="text" name="last_name" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Nationality *</label>
+                                <select name="nationality" required>
+                                    <option value="">Select Nationality</option>
+                                    <option>Afghanistan</option>
+                                    <option>Albania</option>
+                                    <option>Algeria</option>
+                                    <option>Andorra</option>
+                                    <option>Angola</option>
+                                    <option>Antigua & Deps</option>
+                                    <option>Argentina</option>
+                                    <option>Armenia</option>
+                                    <option>Australia</option>
+                                    <option>Austria</option>
+                                    <option>Azerbaijan</option>
+                                    <option>Bahamas</option>
+                                    <option>Bahrain</option>
+                                    <option>Bangladesh</option>
+                                    <option>Barbados</option>
+                                    <option>Belarus</option>
+                                    <option>Belgium</option>
+                                    <option>Belize</option>
+                                    <option>Benin</option>
+                                    <option>Bhutan</option>
+                                    <option>Bolivia</option>
+                                    <option>Bosnia Herzegovina</option>
+                                    <option>Botswana</option>
+                                    <option>Brazil</option>
+                                    <option>Brunei</option>
+                                    <option>Bulgaria</option>
+                                    <option>Burkina</option>
+                                    <option>Burundi</option>
+                                    <option>Cambodia</option>
+                                    <option>Cameroon</option>
+                                    <option>Canada</option>
+                                    <option>Cape Verde</option>
+                                    <option>Central African Rep</option>
+                                    <option>Chad</option>
+                                    <option>Chile</option>
+                                    <option>China</option>
+                                    <option>Colombia</option>
+                                    <option>Comoros</option>
+                                    <option>Congo</option>
+                                    <option>Congo {Democratic Rep}</option>
+                                    <option>Costa Rica</option>
+                                    <option>Croatia</option>
+                                    <option>Cuba</option>
+                                    <option>Cyprus</option>
+                                    <option>Czech Republic</option>
+                                    <option>Denmark</option>
+                                    <option>Djibouti</option>
+                                    <option>Dominica</option>
+                                    <option>Dominican Republic</option>
+                                    <option>East Timor</option>
+                                    <option>Ecuador</option>
+                                    <option>Egypt</option>
+                                    <option>El Salvador</option>
+                                    <option>Equatorial Guinea</option>
+                                    <option>Eritrea</option>
+                                    <option>Estonia</option>
+                                    <option>Ethiopia</option>
+                                    <option>Fiji</option>
+                                    <option>Finland</option>
+                                    <option>France</option>
+                                    <option>Gabon</option>
+                                    <option>Gambia</option>
+                                    <option>Georgia</option>
+                                    <option>Germany</option>
+                                    <option>Ghana</option>
+                                    <option>Greece</option>
+                                    <option>Grenada</option>
+                                    <option>Guatemala</option>
+                                    <option>Guinea</option>
+                                    <option>Guinea-Bissau</option>
+                                    <option>Guyana</option>
+                                    <option>Haiti</option>
+                                    <option>Honduras</option>
+                                    <option>Hungary</option>
+                                    <option>Iceland</option>
+                                    <option>India</option>
+                                    <option>Indonesia</option>
+                                    <option>Iran</option>
+                                    <option>Iraq</option>
+                                    <option>Ireland {Republic}</option>
+                                    <option>Israel</option>
+                                    <option>Italy</option>
+                                    <option>Ivory Coast</option>
+                                    <option>Jamaica</option>
+                                    <option>Japan</option>
+                                    <option>Jordan</option>
+                                    <option>Kazakhstan</option>
+                                    <option>Kenya</option>
+                                    <option>Kiribati</option>
+                                    <option>Korea North</option>
+                                    <option>Korea South</option>
+                                    <option>Kosovo</option>
+                                    <option>Kuwait</option>
+                                    <option>Kyrgyzstan</option>
+                                    <option>Laos</option>
+                                    <option>Latvia</option>
+                                    <option>Lebanon</option>
+                                    <option>Lesotho</option>
+                                    <option>Liberia</option>
+                                    <option>Libya</option>
+                                    <option>Liechtenstein</option>
+                                    <option>Lithuania</option>
+                                    <option>Luxembourg</option>
+                                    <option>Macedonia</option>
+                                    <option>Madagascar</option>
+                                    <option>Malawi</option>
+                                    <option>Malaysia</option>
+                                    <option>Maldives</option>
+                                    <option>Mali</option>
+                                    <option>Malta</option>
+                                    <option>Marshall Islands</option>
+                                    <option>Mauritania</option>
+                                    <option>Mauritius</option>
+                                    <option>Mexico</option>
+                                    <option>Micronesia</option>
+                                    <option>Moldova</option>
+                                    <option>Monaco</option>
+                                    <option>Mongolia</option>
+                                    <option>Montenegro</option>
+                                    <option>Morocco</option>
+                                    <option>Mozambique</option>
+                                    <option>Myanmar, {Burma}</option>
+                                    <option>Namibia</option>
+                                    <option>Nauru</option>
+                                    <option>Nepal</option>
+                                    <option>Netherlands</option>
+                                    <option>New Zealand</option>
+                                    <option>Nicaragua</option>
+                                    <option>Niger</option>
+                                    <option>Nigeria</option>
+                                    <option>Norway</option>
+                                    <option>Oman</option>
+                                    <option>Pakistan</option>
+                                    <option>Palau</option>
+                                    <option>Panama</option>
+                                    <option>Papua New Guinea</option>
+                                    <option>Paraguay</option>
+                                    <option>Peru</option>
+                                    <option>Philippines</option>
+                                    <option>Poland</option>
+                                    <option>Portugal</option>
+                                    <option>Qatar</option>
+                                    <option>Romania</option>
+                                    <option>Russian Federation</option>
+                                    <option>Rwanda</option>
+                                    <option>St Kitts & Nevis</option>
+                                    <option>St Lucia</option>
+                                    <option>Saint Vincent & the Grenadines</option>
+                                    <option>Samoa</option>
+                                    <option>San Marino</option>
+                                    <option>Sao Tome & Principe</option>
+                                    <option>Saudi Arabia</option>
+                                    <option>Senegal</option>
+                                    <option>Serbia</option>
+                                    <option>Seychelles</option>
+                                    <option>Sierra Leone</option>
+                                    <option>Singapore</option>
+                                    <option>Slovakia</option>
+                                    <option>Slovenia</option>
+                                    <option>Solomon Islands</option>
+                                    <option>Somalia</option>
+                                    <option>South Africa</option>
+                                    <option>South Sudan</option>
+                                    <option>Spain</option>
+                                    <option>Sri Lanka</option>
+                                    <option>Sudan</option>
+                                    <option>Suriname</option>
+                                    <option>Swaziland</option>
+                                    <option>Sweden</option>
+                                    <option>Switzerland</option>
+                                    <option>Syria</option>
+                                    <option>Taiwan</option>
+                                    <option>Tajikistan</option>
+                                    <option>Tanzania</option>
+                                    <option>Thailand</option>
+                                    <option>Togo</option>
+                                    <option>Tonga</option>
+                                    <option>Trinidad & Tobago</option>
+                                    <option>Tunisia</option>
+                                    <option>Turkey</option>
+                                    <option>Turkmenistan</option>
+                                    <option>Tuvalu</option>
+                                    <option>Uganda</option>
+                                    <option>Ukraine</option>
+                                    <option>United Arab Emirates</option>
+                                    <option>United Kingdom</option>
+                                    <option>United States</option>
+                                    <option>Uruguay</option>
+                                    <option>Uzbekistan</option>
+                                    <option>Vanuatu</option>
+                                    <option>Vatican City</option>
+                                    <option>Venezuela</option>
+                                    <option>Vietnam</option>
+                                    <option>Yemen</option>
+                                    <option>Zambia</option>
+                                    <option>Zimbabwe</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Religion *</label>
+                                <select name="religion" required>
+                                    <option value="">Select Religion</option>
+                                    <option>Muslim</option>
+                                    <option>Christian</option>
+                                    <option>Hindu</option>
+                                    <option>Buddhist</option>
+                                    <option>Sikh</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Passport No *</label>
+                                <input type="text" name="passport_no" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Contact No *</label>
+                                <input type="tel" name="contact_no" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Visa Type *</label>
+                                <select name="visa_type" required>
+                                    <option value="">Select Visa Type</option>
+                                    <option value="work">Work</option>
+                                    <option value="visit">Visit</option>
+                                    <option value="family">Family</option>
+                                    <option value="study">Study</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Visa Duration *</label>
+                                <select name="visa_duration" required>
+                                    <option value="">Select Duration</option>
+                                    <option value="30">30 Days</option>
+                                    <option value="60">60 Days</option>
+                                    <option value="90">90 Days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Marital Status *</label>
+                                <select name="marital_status" required>
+                                    <option value="">Select Status</option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                    <option value="divorced">Divorced</option>
+                                    <option value="widowed">Widowed</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Education *</label>
+                                <select name="education" required>
+                                    <option value="">Select Education</option>
+                                    <option value="unlearned">Unlearned (Can not read or write)</option>
+                                    <option value="learned">Learned (Can read and write)</option>
+                                    <option value="primary">Primary (6-8 years)</option>
+                                    <option value="middle">Middle (10-12 years)</option>
+                                    <option value="secondary">Secondary (12 years & more)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Email *</label>
+                                <input type="email" name="email" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Address *</label>
+                                <input type="text" name="address" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>CNIC *</label>
+                                <input type="text" name="cnic" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Passport Expiry Date *</label>
+                                <input type="date" name="passport_expiry" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Passport Issue Date *</label>
+                                <input type="date" name="passport_issue" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Passport Issue Place *</label>
+                                <input type="text" name="passport_issue_place" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Appointment City *</label>
+                                <select name="appointment_city" required>
+                                    <option value="">Select Appointment City</option>
+                                    <option>Islamabad</option>
+                                    <option>Karachi</option>
+                                    <option>Lahore</option>
+                                    <option>Peshawar</option>
+                                    <option>Quetta</option>
+                                    <option>Multan</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+                <!-- IMPORTANT NOTICE SECTION -->
+                <div class="form-section notice-section">
+                    <div class="notice-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Important Payment Notice</h3>
+                    </div>
+
+                    <div class="notice-content">
+                        <div class="notice-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div class="notice-text">
+                                <strong>Payment Amount:</strong> Rs. 999
+                            </div>
+                        </div>
+
+
+
+                        <div class="notice-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div class="notice-text">
+                                <strong>Verification:</strong> After payment, share screenshot on WhatsApp (+923338181082)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="notice-footer">
+                        <p class="english-text">
+                            Pay the total amount of 999 on one of the above given account numbers and after payment share the screenshot of payment on WhatsApp (+923338181082) for the confirmation purpose. Thank You!
+                        </p>
+
+                       <p class="urdu-text">
+                    مذکورہ اکاؤنٹ نمبر میں سے کسی ایک پر کل رقم 999 ادا کریں۔ ادائیگی کے بعد تصدیق کے مقصد کے لیے ادائیگی کا اسکرین شاٹ WhatsApp (+923338181082) پر شیئر کریں۔ شکریہ!
+                </p>
+                    </div>
+                </div>
+                <!-- PAYMENT SECTION -->
+                <div class="form-section" id="paymentSection">
+
+                <h2 class="section-title">
+                <i class="fas fa-credit-card"></i> Payment Details
+                </h2>
+
+                <div class="packages-section">
+
+                <!-- JAZZCASH / EASYPAISA -->
+                <div class="package-card selected" style="cursor:default;">
+                    <h3>JazzCash </h3>
+                    <img src="qr1.jpg" style="width:50%; border-radius:10px; margin:10px 0;">
+                    <p><b>Number:</b> 03458181082</p>
+                </div>
+                <div class="package-card selected" style="cursor:default;">
+                    <h3>Easypaisa</h3>
+                    <img src="qr3.jpg" style="width:50%; border-radius:10px; margin:10px 0;">
+                    <p><b>Number:</b> 03458181082</p>
+                </div>
+                <!-- BANK -->
+                <div class="package-card" style="cursor:default;">
+                    <h3>Bank Transfer</h3>
+                    <img src="qr2.jpg" style="width:100%; border-radius:10px; margin:10px 0;">
+                    <p><b>Bank:</b> Bank Of Punjab</p>
+                    <p><b>Account:</b> 5010085253500018</p>
+                    <p><b>IBAN:</b> PK48BPUN5010085253500018</p>
+                </div>
+
+                </div>
+
+                <br>
+
+                <h3>Payment Confirmation</h3>
+
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label>Select Payment Method *</label>
+                            <select id="paymentMethod" required>
+                                <option value="">Select</option>
+                                <option value="Bank Transfer">Bank Transfer</option>
+                                <option value="JazzCash">JazzCash</option>
+                                <option value="Easypaisa">Easypaisa</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label>Your Account / Mobile Number *</label>
+                            <input type="text" id="customerAcc" placeholder="e.g 03XXXXXXXXX" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label>Account Holder Name *</label>
+                            <input type="text" id="senderName" required>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px;">
+                        <p style="color:#856404; font-weight:bold; margin:0;">
+                            <i class="fas fa-info-circle"></i> After payment, please send screenshot on WhatsApp for verification.
+                        </p>
+                    </div>
+                </div>
+
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <div style="text-align: center; margin: 40px 0;">
+                    <button type="submit" class="submit-btn" form="bookingForm" disabled>
+                        <i class="fab fa-whatsapp"></i> Confirm & Send to WhatsApp
+                    </button>
+                </div>
+
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>Application Sent!</h3>
+                    <p>All information sent to WhatsApp for processing</p>
+                    <a href="index.html" class="btn-primary">New Application</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <footer class="footer">
+        <div class="social-icons">
+            <a href="https://youtube.com/@hameedphotostudio9298?si=P5aayDx3hNtWAXXi"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/share/1ApuWfmQ8s/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/photohome92?igsh=MTJpOGVwdml5ODFxcg=="><i class="fab fa-instagram"></i></a>
+            <a href="https://maps.app.goo.gl/M4PBpMRiMDvFXYfp9"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
+
+        <div class="container">
+            <p>Fingerprint Appointment Booking </p>
+        </div>
+    </footer>
+  <footer class="footer">
+        <div class="social-icons">
+            <a href="https://youtube.com/@hameedphotostudio9298?si=P5aayDx3hNtWAXXi"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/share/1ApuWfmQ8s/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/photohome92?igsh=MTJpOGVwdml5ODFxcg=="><i class="fab fa-instagram"></i></a>
+            <a href="https://maps.app.goo.gl/M4PBpMRiMDvFXYfp9"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
+
+        <div class="container">
+            <p>© Fingerprint Appointment Booking </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookPro - Secure Appointments</title>
+    <link rel="icon" type="image/png" href="fevicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <section id="home" class="hero">
+        <div class="hero-side hero-side-left">
+            <a href="index.html" class="hero-tag">
+                <i class="fas fa-fingerprint"></i>
+                <div class="hero-tag-text">
+                    <span>Fingerprint</span>
+                    <strong>Appointment</strong>
+                </div>
+            </a>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-fingerprint"></i>
+            </div>
+            <h1>Secure Appointments</h1>
+            <h2>Fast booking with fingerprint security</h2>
+            <a href="booking.html" class="cta-button">Book Your Appointment</a>
+        </div>
+
+        <div class="hero-side hero-side-right">
+            <span class="service-center-text">Markaz-e-Khidmat Mutakamal</span>
+            <button class="hero-lines" type="button" onclick="toggleHeroPanel()" aria-label="Open quick actions">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="hero-panel" id="heroPanel">
+                <a href="booking.html">Book Now</a>
+                <a href="#services">Services</a>
+                <a href="centers.html">Appointment Offices</a>
+                <div class="contact-menu">
+                    <a href="#" onclick="showPhonePopup(event)" class="contact-link">Contact <i class="fas fa-chevron-down"></i></a>
+                    <div class="phone-popup" id="phonePopup">
+                        <div class="popup-content">
+                            <a href="https://wa.me/923338181082" target="_blank" class="phone-link">
+                                <i class="fab fa-whatsapp"></i> +92 333 8181082
+                            </a>
+                            <button class="popup-close" onclick="hidePhonePopup()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Secure Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon primary"><i class="fas fa-fingerprint"></i></div>
+                    <h3>Secure Booking</h3>
+                    <p>Biometric Protection</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon secondary"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Encrypted Data</h3>
+                    <p>SSL Protected</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon accent"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>SMS Alerts</h3>
+                    <p>Instant Notifications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://youtube.com/@hameedphotostudio9298?si=P5aayDx3hNtWAXXi"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/share/1ApuWfmQ8s/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/photohome92?igsh=MTJpOGVwdml5ODFxcg=="><i class="fab fa-instagram"></i></a>
+            <a href="https://maps.app.goo.gl/M4PBpMRiMDvFXYfp9"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
+
+        <div class="container">
+            <p>© Fingerprint Appointment Booking </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
