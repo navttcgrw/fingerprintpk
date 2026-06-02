@@ -1,5 +1,35 @@
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
+    // Handle "I don't have" name checkboxes
+    const noFirstNameCheckbox = document.getElementById('no_first_name');
+    const noLastNameCheckbox = document.getElementById('no_last_name');
+    const firstNameInput = document.querySelector('input[name="first_name"]');
+    const lastNameInput = document.querySelector('input[name="last_name"]');
+
+    if (noFirstNameCheckbox && firstNameInput) {
+        noFirstNameCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                firstNameInput.removeAttribute('required');
+                firstNameInput.value = 'N/A';
+            } else {
+                firstNameInput.setAttribute('required', 'required');
+                firstNameInput.value = '';
+            }
+        });
+    }
+
+    if (noLastNameCheckbox && lastNameInput) {
+        noLastNameCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                lastNameInput.removeAttribute('required');
+                lastNameInput.value = 'N/A';
+            } else {
+                lastNameInput.setAttribute('required', 'required');
+                lastNameInput.value = '';
+            }
+        });
+    }
+
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -36,9 +66,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Simple validation
             const requiredFields = [
-                'first_name', 'last_name', 'nationality', 'passport_no', 'contact_no',
-                'visa_type', 'visa_duration', 'marital_status', 'education',
-                'email', 'cnic', 'passport_expiry', 'passport_issue'
+                'first_name', 'last_name', 'nationality', 'religion', 'passport_no', 'contact_no',
+                'visa_type', 'marital_status', 'education',
+                'email', 'cnic', 'passport_expiry', 'passport_issue', 'passport_issue_place', 
+                'birth_place', 'appointment_city'
             ];
 
             const paymentMethod = document.getElementById('paymentMethod').value;
@@ -67,27 +98,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Construct WhatsApp message
-            let message = `*New Visa Application*\n\n`;
+            let message = `*Fingerprint Appointment*\n\n`;
             message += `*Personal Information:*\n`;
             message += `First Name: ${data.first_name}\n`;
             message += `Last Name: ${data.last_name}\n`;
             message += `Nationality: ${data.nationality}\n`;
-            message += `Passport No: ${data.passport_no}\n`;
-            message += `Contact No: ${data.contact_no}\n`;
-            message += `Visa Type: ${data.visa_type}\n`;
-            message += `Visa Duration: ${data.visa_duration}\n`;
+            message += `Religion: ${data.religion}\n`;
+            message += `Birth Place: ${data.birth_place}\n`;
             message += `Marital Status: ${data.marital_status}\n`;
             message += `Education: ${data.education}\n`;
+            message += `Contact No: ${data.contact_no}\n`;
             message += `Email: ${data.email}\n`;
-            message += `CNIC: ${data.cnic}\n`;
+            message += `CNIC: ${data.cnic}\n\n`;
+            message += `*Passport Information:*\n`;
+            message += `Passport No: ${data.passport_no}\n`;
+            message += `Passport Issue: ${data.passport_issue}\n`;
             message += `Passport Expiry: ${data.passport_expiry}\n`;
-            message += `Passport Issue: ${data.passport_issue}\n\n`;
-
+            message += `Passport Issue Place: ${data.passport_issue_place}\n\n`;
+            message += `*Visa Information:*\n`;
+            message += `Visa Type: ${data.visa_type}\n`;
+            message += `Appointment City: ${data.appointment_city}\n\n`;
             message += `*Payment Information:*\n`;
             message += `Payment Method: ${paymentMethod}\n`;
             message += `Customer Account: ${customerAcc}\n`;
             message += `Account Holder: ${senderName}\n\n`;
-
             message += `*Application submitted on: ${new Date().toLocaleString()}*`;
 
             // Encode message for URL
